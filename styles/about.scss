@@ -1,0 +1,171 @@
+#about {
+  margin-block-start: 2rem;
+  padding-block: 5rem;
+
+  .about-me {
+    margin-block: 1.5rem;
+    &__title {
+      font-size: var(--heading);
+      font-weight: 800;
+      margin-block-end: 1rem;
+    }
+
+    &__description {
+      color: var(--text-secondary);
+      margin-block-end: 1.5rem;
+    }
+    &__detail {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-block-end: 1.5rem;
+      &__item {
+        span.item__label {
+          font-weight: 800;
+          font-size: 1.15rem;
+          color: var(--color);
+        }
+      }
+    }
+  }
+
+  .qualifications {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+
+    .experience {
+      height: min-content;
+    }
+    &__title {
+      font-size: var(--heading);
+      font-weight: 800;
+      margin-block-end: 1.5rem;
+    }
+    &__list {
+      // list-style: none;
+      // > li {
+      //   margin-block-end: 2rem;
+      // }
+      .qualification {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        margin-block-end: 2rem;
+
+        .qualification__detail {
+          &__header {
+            position: relative;
+            margin-block-end: 1rem;
+            .qualification__detail {
+              &__title {
+                font-size: 1.5rem;
+                font-size: 800;
+                margin-block-end: 0.5rem;
+              }
+              &__subtitle {
+                font-size: 0.75rem;
+                display: flex;
+                justify-content: space-between;
+              }
+            }
+            span.badge {
+              min-width: 7ch;
+              font-size: 0.75rem;
+              padding: 0.125rem 0.25rem;
+              border-radius: 0.25rem;
+              background-color: var(--yellow);
+              position: absolute;
+              top: -2px;
+              right: 0;
+              color: #000000;
+              transform: translate(100%, 50%);
+              text-align: center;
+            }
+          }
+          .qualification__description {
+            // font-size: 0.825rem;
+          }
+        }
+      }
+    }
+  }
+
+  .skills {
+    margin-block-start: 1.5rem;
+    padding-inline: 1.5rem;
+    .qualifications__list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 2rem;
+
+      .card {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 920px) {
+  #about .qualifications {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  #about {
+    .about-me {
+      &__detail {
+        grid-template-columns: 1fr;
+      }
+    }
+    .skills {
+      padding-inline: 0;
+    }
+    .qualifications {
+      .education,
+      .experience,
+      .skills {
+        .icon-badge {
+          display: none;
+        }
+      }
+    }
+    .skills .qualifications__list .card {
+      .icon-badge {
+        display: none;
+      }
+    }
+  }
+  #about
+    .qualifications__list
+    .qualification
+    .qualification__detail__header
+    span.badge {
+    // right: 3rem;
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 731px) {
+  #about
+    .qualifications__list
+    .qualification
+    .qualification__detail__header
+    span.badge {
+    display: block;
+    right: 3rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about
+    .qualifications__list
+    .qualification
+    .qualification__detail__header
+    span.badge {
+    display: none;
+  }
+}

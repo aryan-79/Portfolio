@@ -1,0 +1,56 @@
+#projects {
+  padding-block: 5rem;
+}
+
+.projects__list {
+  margin-block-start: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  .card {
+    padding: 1.5rem;
+  }
+
+  .project {
+    transition: all 0.5s ease-out;
+    &:hover {
+      color: var(--yellow);
+      img {
+        scale: 1.05;
+      }
+    }
+    &__image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/3;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      img {
+        object-fit: cover;
+        transition: all 0.5s ease-out;
+      }
+    }
+
+    &__details {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      .project__title {
+        font-size: 1.5rem;
+        font-weight: 800;
+        margin-block: 1rem;
+      }
+
+      .project__description {
+        color: var(--color);
+      }
+    }
+
+    .link-badge {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-block-start: 1.25rem;
+    }
+  }
+}
