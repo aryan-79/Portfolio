@@ -20,7 +20,7 @@ const ContactSection = () => {
   });
 
   const createMailToLink = () => {
-    const { name, subject, message } = formData;
+    const { subject, message } = formData;
     const email = "aryanmgr79@gmail.com";
     const mailtoLink = `mailto:${email}?subject=${subject}&body=${message}`;
     return mailtoLink;
@@ -31,7 +31,7 @@ const ContactSection = () => {
         <div className="section__header">
           <h2 className="section__header__title">Get in Touch</h2>
           <p className="section__header__subtitle">
-            I’m just a message away! Feel free to contact me
+            I&apos;m just a message away! Feel free to contact me
           </p>
         </div>
       </Animated>
