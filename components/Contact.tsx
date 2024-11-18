@@ -13,17 +13,22 @@ import { IoShareSocialSharp } from "react-icons/io5";
 import Animated from "./Animated";
 
 const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    subject: "",
-    message: "",
-  });
+  const [name, setName] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
 
   const createMailToLink = () => {
-    const { subject, message } = formData;
-    const email = "aryanmgr79@gmail.com";
-    const mailtoLink = `mailto:${email}?subject=${subject}&body=${message}`;
-    return mailtoLink;
+    const sub = encodeURIComponent(subject);
+    const body = encodeURIComponent(message);
+    return `mailto:aryanmgr79@gmail.com?subject=${sub}&body=${body}`;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !subject || !message) {
+      return;
+    }
+    window.open(createMailToLink(), "_blank");
   };
   return (
     <section id="contact" className="content-wrapper">
@@ -37,49 +42,37 @@ const ContactSection = () => {
       </Animated>
 
       <div className="card contact">
-        <form>
-          <div>
-            <label htmlFor="name">Name</label>
+        <form onSubmit={handleSubmit}>
+          <FloatingLabelInput label="Name">
             <input
               type="text"
               name="name"
-              id="name"
-              placeholder="Enter Your Name"
-              value={formData.name}
-              onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
-              }
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
             />
-          </div>
-          <div>
-            <label htmlFor="subject">Subject</label>
+          </FloatingLabelInput>
+          <FloatingLabelInput label="Subject">
             <input
               type="text"
               name="subject"
-              id="subject"
-              placeholder="Enter Email Subject"
-              value={formData.subject}
-              onChange={(e) =>
-                setFormData({ ...formData, subject: e.target.value })
-              }
+              value={subject}
+              onChange={(e) => setSubject(e.target.value)}
+              required
             />
-          </div>
-          <div>
-            <label htmlFor="message">Message</label>
+          </FloatingLabelInput>
+          <FloatingLabelInput label="Message">
             <textarea
               name="message"
-              id="message"
-              placeholder="Enter Your Message"
-              value={formData.message}
-              onChange={(e) =>
-                setFormData({ ...formData, message: e.target.value })
-              }
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
             />
-          </div>
-          <Link href={createMailToLink()} className="btn">
+          </FloatingLabelInput>
+          <button className="btn">
             <FaTelegramPlane />
             Send Message
-          </Link>
+          </button>
         </form>
 
         <div className="get-in-touch">
@@ -140,3 +133,30 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
+
+interface FloatingLabelInputProps {
+  label: string;
+  children: React.ReactElement;
+}
+
+function FloatingLabelInput({ label, children }: FloatingLabelInputProps) {
+  const id = React.useId();
+  const child = React.Children.only(children);
+
+  return (
+    <div className="floating-label-input">
+      <div className="floating-label-input__wrapper">
+        {React.cloneElement(child, {
+          id,
+          placeholder: label,
+          className: `floating-label-input__input ${
+            child.props.className || ""
+          }`,
+        })}
+        <label htmlFor={id} className="floating-label-input__label">
+          {label}
+        </label>
+      </div>
+    </div>
+  );
+}
