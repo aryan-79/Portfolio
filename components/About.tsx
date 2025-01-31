@@ -38,7 +38,7 @@ const AboutSection = () => {
               <span className="item__label">Nationality:</span> Nepali
             </li>
             <li className="about-me__detail__item">
-              <span className="item__label">Whatsapp:</span> +977 986-43311992
+              <span className="item__label">Whatsapp:</span> +977 986-4331992
             </li>
             <li className="about-me__detail__item">
               <span className="item__label">Email:</span> aryanmgr79@gmail.com
