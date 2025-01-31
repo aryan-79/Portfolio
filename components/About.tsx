@@ -122,7 +122,7 @@ const AboutSection = () => {
         </Animated>
         <div className="qualifications__list">
           {skills.map((skill, index) => (
-            <Animated delay={index / 10} key={`skill${index}`}>
+            <Animated delay={(index % 3) / 15} key={`skill${index}`}>
               <div className="qualification card">
                 <div className="icon-badge">{skill.icon}</div>
                 <div className="qualification__detail">

@@ -20,7 +20,7 @@ const ProjectsSection = () => {
 
       <div className="projects__list">
         {projects.map((project, index) => (
-          <Animated delay={(index % 3) / 10} key={`project${index}`}>
+          <Animated delay={(index % 3) / 15} key={`project${index}`}>
             <div className="card project">
               <div className="project__image">
                 <Image src={project.img} fill alt="" />

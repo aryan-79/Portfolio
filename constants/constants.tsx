@@ -1,5 +1,5 @@
 import { PiBagSimpleFill } from "react-icons/pi";
-import { FaReact, FaHtml5, FaCss3 } from "react-icons/fa";
+import { FaReact, FaHtml5, FaCss3, FaNode } from "react-icons/fa";
 import { SiMongodb, SiNextdotjs } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -12,6 +12,7 @@ import ProductCart from "@/public/product-cart.png";
 import BentoGrid from "@/public/bento-grid.png";
 import BlogPage from "@/public/blog-page.png";
 import GithubAccountFinder from "@/public/github-account-finder.png";
+import Aavatech from "@/public/aavatech.png"
 
 export type SkillDataType = {
   title: string;
@@ -48,6 +49,12 @@ export const experiences: ExperienceDataType[] = [
       "In my role at Imark Digital, I collaborated with designers and backend developers to deliver responsive web applications. I focused on ensuring a seamless user experience and optimized performance across various devices.",
     icon: <PiBagSimpleFill size={24} />,
   },
+  {
+    title: "Fullstack Developer",
+    subtitle: "Aavatech Nepal (Nov, 2024 - Currently Employed)",
+    description: "In my role at Aavatech Nepal, I implemented responsive and well-structured web applications, and handled API creation and integrations in Node.js and React ecosystems. I developed scalable solutions that improved system efficiency and user experience.",
+    icon: <PiBagSimpleFill size={24} />,
+  }
 ];
 
 export const education: EducationDataType[] = [
@@ -90,20 +97,6 @@ export const skills: SkillDataType[] = [
     icon: <FaReact size={24} />,
   },
   {
-    title: "HTML",
-    subtitle: "Standard Markup Language",
-    description:
-      "Proficient in HTML to structure and present content on the web, ensuring semantic clarity and accessibility.",
-    icon: <FaHtml5 size={24} />,
-  },
-  {
-    title: "CSS",
-    subtitle: "Styling and Layout Language",
-    description:
-      "Adept in CSS for designing visually appealing and responsive web applications across various devices.",
-    icon: <FaCss3 size={24} />,
-  },
-  {
     title: "TypeScript",
     subtitle: "Statically Typed Superset of JavaScript",
     description:
@@ -125,15 +118,41 @@ export const skills: SkillDataType[] = [
     icon: <RiTailwindCssFill size={24} />,
   },
   {
+    title: "HTML",
+    subtitle: "Standard Markup Language",
+    description:
+      "Proficient in HTML to structure and present content on the web, ensuring semantic clarity and accessibility.",
+    icon: <FaHtml5 size={24} />,
+  },
+  {
+    title: "CSS",
+    subtitle: "Styling and Layout Language",
+    description:
+      "Adept in CSS for designing visually appealing and responsive web applications across various devices.",
+    icon: <FaCss3 size={24} />,
+  },
+  {
     title: "MongoDB",
     subtitle: "NoSQL Database Management",
     description:
       "Skilled in MongoDB for efficient data storage and retrieval, leveraging its flexible schema for scalable applications.",
     icon: <SiMongodb size={24} />,
   },
+  {
+    title: "Node.js / Express",
+    subtitle: "Runtime Environment / Web application Framework",
+    description: "Skilled in Node.js and Express for building robust, scalable backend applications, leveraging their powerful middleware architecture for creating efficient and modular server-side solutions.",
+    icon: <FaNode size={24} />
+  }
 ];
 
 export const projects: ProjectDataType[] = [
+  {
+    title: "Aavatech's Website",
+    description: "The website for AavaTech Nepal built with Next.js",
+    img: Aavatech,
+    projectLink: "https://aavatechnepal.com/",
+  },
   {
     title: "Expense Tracker",
     description:
@@ -177,7 +196,6 @@ export const projects: ProjectDataType[] = [
     img: BlogPage,
     projectLink: "https://nextjs-blog-page-two.vercel.app",
   },
-
   {
     title: "Github Account Finder",
     description:
