@@ -51,7 +51,7 @@ export const experiences: ExperienceDataType[] = [
   },
   {
     title: "Fullstack Developer",
-    subtitle: "Aavatech Nepal (Nov, 2024 - Currently Employed)",
+    subtitle: "Aavatech Nepal (Nov, 2024 - Present)",
     description: "In my role at Aavatech Nepal, I implemented responsive and well-structured web applications, and handled API creation and integrations in Node.js and React ecosystems. I developed scalable solutions that improved system efficiency and user experience.",
     icon: <PiBagSimpleFill size={24} />,
   }
