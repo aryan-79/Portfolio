@@ -21,7 +21,7 @@ const AboutSection = () => {
       <div className="about-me card">
         <Animated>
           <h3 className="about-me__title">
-            Hello, I am Aryan Budhathoki, Based in Nepal
+            Hello, I am Aryan Budhathoki from Palpa,Nepal.
           </h3>
           <p className="about-me__description">
             I am a passionate web developer with a keen interest in creating
